@@ -16,9 +16,9 @@
   "extends": [
     "plugin:prettier/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "prettier" // Ensures Prettier conflicts are disabled
   ],
-
   "rules": {
     "node/no-unsupported-features/es-syntax": "off",
     "no-extra-semi": "off",
@@ -55,7 +55,13 @@
       }
     ],
     "id-match": 0,
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true
+      }
+    ],
+    "quotes": ["error", "single", { "avoidEscape": true }],
     "comma-dangle": ["error", "only-multiline"],
     "max-len": [
       "error",
